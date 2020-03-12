@@ -1,0 +1,29 @@
+{
+    "name": "Ideaboard",
+    "version": "1.1",
+    "description": "ideaboard for youtube",
+    "author": "Nikunj Beladiya",
+    "manifest_version": 2,
+    "minimum_chrome_version": "60",
+    "icons": {
+      "128": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "css": ["css/app.css", "css/style.css"],
+            "run_at": "document_start",
+            "js": [ 
+                "js/jquery-3.4.1.min.js",
+                "js/jquery-ui.min.js",
+                "js/app.js",
+                "index.js",
+                "content.js"
+            ],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "permissions": ["activeTab"],
+    "optional_permissions": ["<all_urls>"],
+    "web_accessible_resources": ["*.woff2", "*.png", "*.gif", "index.html", "*.css", "*.js"],
+    "content_security_policy": "script-src 'self' https://apis.google.com; 'unsafe-eval'; object-src 'self'"
+}
